@@ -34,8 +34,14 @@ library(pander)
 
 # What is \brms?
 
-* \brms is an R package doing Bayesian general and generalized linear models, and general and generalized  multilevel variants.
-* To understand why \brms is so valuable, we must understand the following facts:
+* \brms is an R package for doing Bayesian general and generalized linear models, and general and generalized  multilevel variants, etc.
+* It includes far more probability models for outcome variables than almost all other regression packages: gaussian, student, binomial, bernoulli, poisson, negbinomial, geometric, Gamma, skew_normal, lognormal, shifted_lognormal, exgaussian, wiener, inverse.gaussian, exponential, weibull, frechet, Beta, von_mises, asym_laplace, gen_extreme_value, categorical, cumulative, cratio, sratio, acat, hurdle_poisson, hurdle_negbinomial, hurdle_gamma, hurdle_lognormal, zero_inflated_binomial, zero_inflated_beta, zero_inflated_negbinomial, zero_inflated_poisson, and zero_one_inflated_beta.
+* It also allows for censored data, missing data, measurment error, nonlinear regression, probabilistic mixture models, *distributional* models (whereby all parameters of the outcome variables have predictors), and so on.
+
+# The how and why of \brms
+
+* \brms writes Stan and Stan writes and compiles a \mcmc sampler.
+* To understand this process and its importance better, we must appreciate the following:
   1. Bayes is best. No further discussion necessary.
   1. Doing Bayesian data analysis, except for when using a prohibitively small set of models, 
      requires Markov Chain Monte Carlo (\mcmc) samplers.
@@ -44,13 +50,6 @@ library(pander)
   1. Although probabilistic programming languages reduce down the time and effort to 
      obtain your sampler by orders of magnitude, they *still* require considerable time and 
      effort relative to writing a single R command.
-* \brms allow you to write your Bayesian model (with some restrictions) using standard R regression commands. It then writes Stan code, which then writes and compiles your sampler.
-
-# Major features
-
-* Although ultimately more flexibility will be obtained using Stan, \brms is remarkably powerful:
-* It includes far more probability models for outcome variables than almost all other regression packages: gaussian, student, binomial, bernoulli, poisson, negbinomial, geometric, Gamma, skew_normal, lognormal, shifted_lognormal, exgaussian, wiener, inverse.gaussian, exponential, weibull, frechet, Beta, von_mises, asym_laplace, gen_extreme_value, categorical, cumulative, cratio, sratio, acat, hurdle_poisson, hurdle_negbinomial, hurdle_gamma, hurdle_lognormal, zero_inflated_binomial, zero_inflated_beta, zero_inflated_negbinomial, zero_inflated_poisson, and zero_one_inflated_beta.
-* It also allows for censored data, missing data, measurment error, nonlinear regression, probabilistic mixture models, *distributional* models (whereby all parameters of the outcome variables have predictors), and so on.
-
+* \brms allows you to write your Bayesian model (with some restrictions) using standard R regression commands.
 
 
